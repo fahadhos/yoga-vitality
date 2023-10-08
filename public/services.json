@@ -1,0 +1,57 @@
+ [
+      {
+        "id": 1,
+        "name": "Yoga Classes",
+        "description": "Daily yoga classes led by experienced instructors. Suitable for all levels, from beginners to advanced practitioners.",
+        "price": 30.00,
+        "time": "10:00 AM - 10:45 AM",
+        "imageURL": "https://i.ibb.co/Ch3SgZ8/yoga-classes.jpg",
+        "buttonText": "Schedule an Appointment"
+      },
+      {
+        "id": 2,
+        "name": "Meditation Workshops",
+        "description": "Learn meditation techniques to calm your mind and reduce stress. Guided workshops for beginners and advanced meditators.",
+        "price": 25.00,
+        "time": "11:00 AM - 12:00 PM",
+        "imageURL": "https://i.ibb.co/zW3hz6K/meditation-workshops.png",
+        "buttonText": "Schedule an Appointment"
+      },
+      {
+        "id": 3,
+        "name": "Fitness Bootcamp",
+        "description": "Intensive fitness bootcamp sessions designed to help you get in shape and boost your energy levels.",
+        "price": 40.00,
+        "time": "9:30 AM - 11:00 AM",
+        "imageURL": "https://i.ibb.co/nRLm4qP/fitness-bootcamp.jpg",
+        "buttonText": "Schedule an Appointment"
+      },
+      {
+        "id": 4,
+        "name": "Nutrition Consultation",
+        "description": "Personalized nutrition consultations to help you achieve your health and fitness goals.",
+        "price": 50.00,
+        "time": "2:00 PM - 3:00 PM",
+        "imageURL": "https://i.ibb.co/6ZqTYFB/nutrition-consultation.jpg",
+        "buttonText": "Schedule an Appointment"
+      },
+      {
+        "id": 5,
+        "name": "Nature Hikes",
+        "description": "Explore the beautiful natural surroundings with guided nature hikes. Discover the local flora and fauna.",
+        "price": 20.00,
+        "time": "8:00 AM - 10:00 AM",
+        "imageURL": "https://i.ibb.co/ZcwLchb/natural-hikes.png",
+        "buttonText": "Schedule an Appointment"
+      },
+      {
+        "id": 6,
+        "name": "Spa and Relaxation",
+        "description": "Indulge in spa treatments and relaxation sessions to unwind and rejuvenate during your retreat.",
+        "price": 60.00,
+        "time": "1:30 PM - 3:30 PM",
+        "imageURL": "https://i.ibb.co/2NDWy2z/spa.png",
+        "buttonText": "Schedule an Appointment"
+      }
+    ]
+    
