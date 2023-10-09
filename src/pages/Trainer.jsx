@@ -16,7 +16,7 @@ const Trainer = () => {
         <title>Yoga vitalities | Trainers</title>
       </Helmet>
 <div className='grid place-content-center py-16 bg-teal-50'>
-<div className='' >
+<div className='' data-aos='fade-up'>
 
     <h1 className='text-4xl font-bold capitalize text-center 
     pt-5 bg-gradient-to-r text-transparent
@@ -41,7 +41,9 @@ Our team of dedicated trainers is at the heart of what we do.
       Get to know our trainers and let their knowledge and enthusiasm motivate you towards your goals.
         </p>
 </div>
-        <div className=" carousel carousel-center max-w-md lg:max-w-7xl p-4 space-x-4 bg-teal-200 rounded">
+        <div className=" carousel carousel-center max-w-md lg:max-w-7xl p-4 space-x-4 bg-teal-200 rounded"
+        data-aos='zoom-in'
+        >
   <div className="carousel-item gap-7 ">
    {
    trainers.map(trainer=> <>
