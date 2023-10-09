@@ -6,8 +6,11 @@ import Login from './../pages/Login';
 import Register from './../pages/Register';
 import PrivateRoute from './../Providers/PrivateRoute';
 import Classes from './../pages/Classes';
-import ClassCard from "../pages/ClassCard";
-
+import ClassHome from "../pages/ClassHome";
+import Trainer from './../pages/Trainer';
+import About from './../pages/About';
+import Contact from './../pages/Contact';
+import Price from './../pages/Price';
 
 
 
@@ -34,13 +37,31 @@ const router = createBrowserRouter([
         element: <PrivateRoute> <Classes></Classes></PrivateRoute>
     },
     {
-path:'/classes',
-element: <ClassCard></ClassCard>
+        path:'/trainers',
+
+        element: <PrivateRoute> <Trainer></Trainer></PrivateRoute>
+        ,
+        loader: ()=> fetch('/trainer.json')
     },
     {
-        path:'/err',
+path:'/classes',
+element: <ClassHome></ClassHome>,
+loader: ()=>fetch('/services.json')
+    },
+    {
+path:'/price',
+element: <PrivateRoute><Price></Price></PrivateRoute> 
+    },
+    {
+        path:'/about',
 
-        element:  <ErrorPage></ErrorPage>
+        element:  <About></About>
+    },
+    
+    {
+        path:'/contact',
+
+        element:  <Contact></Contact>
     },
     
     {
