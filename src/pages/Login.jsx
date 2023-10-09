@@ -43,15 +43,8 @@ toast.success('Successfully signed in')
   navigate( location?.state ? location.state : '/')
 })
 .catch(error=>{
-     
-    if (error.code === 'auth/wrong-password') {
-        // Handle incorrect password here
-        console.log('Incorrect password.');
-      } 
-    //   else {
-    //     // Handle other authentication errors
-    //     console.log('Authentication error:', error);
-    //   }
+     console.log(error.message);
+ toast.error('Your Email/Password is wrong')
 })
   } 
 
@@ -62,28 +55,33 @@ signUpGoogle()
 .then(result=>{
     console.log(result.user);
   
-    toast.success('Account Has Successfully Created')
-    
-    navigate( location?.state ? location.state : '/')
+    toast.success('Account Has been Logged in Successfully')
+    setTimeout(()=>{
+
+        navigate( location?.state ? location.state : '/')
+    },1000)
 
   })
   .catch((error)=>{
+    toast.error('Invalid email/password credentials')
+    
     console.log(error);
   })
   }
   return (
-    <div>
+    <div className='mx-auto overflow-x-hidden'>
       <Helmet>
         <title>Yoga Vitality | Login</title>
       </Helmet>
       
       <ToastContainer/>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content  ">
+      <div className="hero min-h-screen bg-base-200    "
+      style={{backgroundImage:'url("https://img.freepik.com/free-vector/gradient-particle-wave-background_23-2150428788.jpg?w=996&t=st=1696814594~exp=1696815194~hmac=f58ea2775daf19728a41126728f211db392132d444f19a837b11b4c41b4aa699")'}}
+      >  <div className="hero-content  mx-auto ">
 
-          <div className="card flex-shrink-0 w-[30rem] max-w-lg shadow-2xl bg-base-100">
-                <div className="text-center ">
-                <h1 className="text-3xl font-bold">Sign In</h1>
+<div className="card flex-shrink-0 w-[30rem] max-sm:w-[23rem] max-w-lg shadow-2xl bg-white">
+           <div className="text-center  ">
+                <h1 className="text-3xl font-bold py-5">Sign In</h1>
                 <button onClick={handleGoogleLogin} className="btn m-5 capitalize">
                       {' '}<FcGoogle className="text-2xl" /> Google{' '}
                 </button>
@@ -114,9 +112,10 @@ signUpGoogle()
                   className="input input-bordered"
                   required
                 />
-                <p
-                  className="relative -top-8 text-xl left-[24rem]"
-                  onClick={() => setHidepass (!hidepass)}
+               <p
+                  className="relative -top-8 text-xl left-[24rem]
+                  max-sm:left-[16rem]
+                  "      onClick={() => setHidepass (!hidepass)}
                 >
                   {hidepass ? <AiFillEye /> : <AiFillEyeInvisible />}    {' '}
                 </p>

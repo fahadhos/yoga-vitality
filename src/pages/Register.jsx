@@ -5,12 +5,19 @@ import {Helmet} from 'react-helmet-async';
 import {useContext, useState} from 'react';
 
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-import auth from '../firebase/firebase.config';
+  import 'react-toastify/dist/ReactToastify.css'; 
 import { AuthContext } from '../Providers/AuthProvider';
 
 import { updateProfile } from 'firebase/auth';
+
+
+ 
+  
+
 const Register = () => {
+
+   
+
   const [hidepass, setHidepass] = useState (true);
 // 
 const [errorMsg, setErrorMsg] = useState (null)
@@ -57,22 +64,26 @@ if(password.length<6){
   return  setSpecialErrorMsg('Password must have one special characters eg:$,#')
 }
   
-{signUp(  email,password)
+{
+signUp(  email,password)
 .then( result=>{
-    console.log(result?.user)
+    console.log(result.user)
     updateProfile(result?.user,{
         displayName: name, photoURL: 'https://i.ibb.co/60y05cV/user.png'
     }).then(
         r=>{
             console.log(r.user);
-             
+  
         }
     ).catch(e=>{
         console.error(e.message)
-    })
-    
+    }) 
     toast.success('Account Has Successfully Created')
-    navigate( location?.state ? location.state : '/')
+    
+    
+    setTimeout(()=>{
+        navigate( location?.state ? location.state : '/'     )
+        },1000) 
 })
 .catch(err => {
     console.error(err.message)
@@ -92,25 +103,31 @@ signUpGoogle()
 
   })
   .catch((error)=>{
+    toast.success(error.message)
+    
     console.log(error);
   })
   }
   return (
-    <div>
+    <div className='mx-auto overflow-x-hidden'>
       {' '}  <Helmet>
         <title>Yoga Vitality | Register</title>
       </Helmet>
       <ToastContainer/>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content  ">
+     
+ 
+      <div className="hero min-h-screen bg-base-200    "
+      style={{backgroundImage:'url("https://img.freepik.com/free-vector/gradient-particle-wave-background_23-2150428788.jpg?w=996&t=st=1696814594~exp=1696815194~hmac=f58ea2775daf19728a41126728f211db392132d444f19a837b11b4c41b4aa699")'}}
+      >
+        <div className="hero-content  mx-auto">
 
-          <div className="card flex-shrink-0 w-[30rem] max-w-lg shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-[30rem] max-sm:w-[23rem] max-w-lg shadow-2xl bg-white">
            <div className="text-center  ">
                 <h1 className="text-3xl font-bold pt-3">Sign Up</h1>
                 <button onClick={handleGoogleLogin} className="btn m-5 capitalize">
                   {' '}<FcGoogle className="text-2xl" /> Google{' '}
                 </button>
-                <p className="py-6 divider"> or </p>
+                <p className="py-6 max-sm:px-4 divider"> or </p>
               </div>
  <form onSubmit={handleRegister} className="card-body">
               
@@ -150,7 +167,9 @@ signUpGoogle()
                 />
                
                 <p
-                  className="relative -top-8 text-xl left-[24rem]"
+                  className="relative -top-8 text-xl left-[24rem]
+                  max-sm:left-[16rem]
+                  "
                   onClick={() => setHidepass (!hidepass)}
                 >
                   {hidepass ? <AiFillEye /> : <AiFillEyeInvisible />}    {' '}
