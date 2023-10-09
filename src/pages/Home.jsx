@@ -45,7 +45,8 @@ data-aos-easing="ease-out-cubic"
 data-aos-duration="1000"
 >Body.Spirit.Mind</h2>
 
-<div className='grid grid-cols-2 gap-2 p-5'>
+<img className='w-[20rem] lg:hidden md:hidden' src={motivation} alt=""  />
+<div className='grid grid-cols-2 gap-2 p-5 max-sm:block'>
 <div className='space-y-5'  data-aos="fade-left">
 <AiOutlineHeart  className='rounded-full border-2 text-5xl p-1'> </AiOutlineHeart>
     <h2 className="text-xl">
@@ -68,7 +69,7 @@ data-aos-duration="1000"
 </div>
 
 
-<div className='grid grid-cols-2 p-5' data-aos="fade-left">
+<div className='grid grid-cols-2 p-5 max-sm:block' data-aos="fade-left">
 <div className='space-y-5'>
 <GiLifeInTheBalance  className='rounded-full border-2 text-5xl p-1'> </GiLifeInTheBalance>
     <h2 className="text-xl">
@@ -92,7 +93,7 @@ data-aos-duration="1000"
 
 </div>
 
-<div className=' grid place-content-center col-span-3  '
+<div className=' grid place-content-center col-span-3 max-sm:hidden '
  >
 <img className='w-[20rem]' src={motivation} alt=""  />
 </div>
@@ -102,13 +103,13 @@ data-aos-duration="1000"
 
 {/* Classes Section*/}
 
-<section className='grid place-content-center  '>
+<section  data-aos="fade-up" className='grid place-content-center pb-10  '>
  <div className='relative text-center justify-center items-center'>
 
-<h2 className="text-4xl uppercase font-bold text-teal-400"> Classes</h2>
-<p className='text-center '>we invite you to embark on a journey of self-discovery, rejuvenation, and transformation. Our carefully curated classes are designed <br /> to nurture your mind, body, and spirit, helping you achieve a harmonious balance in your life.</p>
+<h2 className="text-4xl uppercase font-bold text-teal-400 pb-5"> Classes</h2>
+<p className='  max-sm:text-[13px]   '>we invite you to embark on a journey of self-discovery, <br className='lg:hidden md:hidden' /> rejuvenation, and transformation. <br className='lg:hidden md:hidden' />Our carefully curated classes are designed <br />  to nurture your mind, body, and spirit, <br className='lg:hidden md:hidden' /> helping you achieve a harmonious balance in your life.</p>
   
-<div className="carousel   my-10 carousel-center   w-[50rem]
+<div className="carousel   my-10 carousel-center   w-[50rem] max-sm:w-[25rem]
  p-4 space-x-4   rounded-box   " 
  >
   
