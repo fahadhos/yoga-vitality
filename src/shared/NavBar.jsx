@@ -11,7 +11,7 @@ const NavBar = () => {
     const navlinks=<>
        <li><NavLink to='/'>Home</NavLink></li>
        <li><NavLink to='/about'>About</NavLink></li>
-       <li><NavLink to='/class'>Classes</NavLink></li>
+       <li><NavLink to='/classes'>Classes</NavLink></li>
        <li><NavLink to='/price'>Prices</NavLink></li>
        <li><NavLink to='/trainers'>Trainers</NavLink></li>
        <li><NavLink to='/contact'>Contact Us</NavLink></li>
@@ -49,7 +49,7 @@ const NavBar = () => {
             </ul>
           </div>
           <NavLink  to='/'>
-           <img className="bg-teal-300 w-[14rem]" src={logo} alt="logo" />
+           <img className="bg-teal-300 w-[14rem] max-sm:w-[7rem]" src={logo} alt="logo" />
           </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -59,25 +59,69 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-         <p className="font-bold "> {user && 'Welcome, '+ user?.displayName}</p>
-       <label tabIndex={0} className="btn btn-ghost btn-circle avatar  mx-2">
+        <div className="dropdown  flex lg:hidden">
+          <p className="font-bold max-sm:text-sm  w-[10rem] pt-3"> {user && 'Welcome, '+ user?.displayName}</p>
+               <label tabIndex={0} className="btn btn-ghost btn-circle avatar  mx-2">
         <div className="w-10 rounded-full">
           <img src={user?.photoURL} />
           </div>
       </label>
-{
+             
+            <ul id="sidebar" tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1]
+             p-2 shadow bg-base-100 rounded w-[10rem] top-10 left-16
+           
+            ">
+       
+            {
+                
     user ? <> <Link  >
-    <button to='/login' onClick={handleLogOut} className="btn border-none capitalize hover:bg-orange-400 bg-black text-white">Log Out</button>
+    <button to='/login' onClick={handleLogOut} className="btn border-none 
+    capitalize hover:bg-orange-400 text-sm w-[7rem]
+     bg-black text-white">Log Out</button>
     </Link> 
-    </> : <> <Link to='/register' >
-     <button className="btn capitalize hover:bg-orange-400 bg-teal-300">Register</button>
+    </> : <>
+    <Link to='/login' >
+     <button className="btn capitalize
+      hover:bg-orange-400 bg-teal-300 border-none">Login</button>
+     </Link> 
+     <Link to='/register' >
+     <button className="btn capitalize
+      hover:bg-orange-400 bg-teal-600 text-white">Sign up for free</button>
      </Link> 
     </>
 }
+            </ul>
+          </div> 
+          {/* for laptop it will appear */}
+ <p className="font-bold max-sm:text-sm  max-sm:hidden "> {user && 'Welcome, '+ user?.displayName}</p>
+       <label tabIndex={0} className="btn btn-ghost btn-circle 
+       avatar  mx-2   max-sm:hidden ">
+        <div className="w-10 rounded-full  max-sm:hidden ">
+         { user?<img src={user?.photoURL} />:''
+         } </div>
+      </label>
+{
+    user ? <> <Link  >
+    <button to='/login' 
+    onClick={handleLogOut} className="btn border-none capitalize
+     hover:bg-orange-400 bg-black  max-sm:hidden 
+      text-white">Log Out</button>
+    </Link> 
+    </> :<> <Link to='/login' >
+     <button className="btn capitalize hover:border-2 hover:border-cyan-500
+      hover:bg-transparent bg-teal-300 font-bold border-transparent">Login</button>
+     </Link> 
+     <Link to='/register' >
+     <button className="btn capitalize
+      hover:bg-orange-400  max-sm:text-[10px] max-sm:w-[7rem] bg-teal-600 text-white">Sign up for free</button>
+     </Link> 
+    </>
+}
+ </div>
          
      
          </div>
-      </div>
+    
       </>
     );
 };
